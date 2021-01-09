@@ -1,17 +1,53 @@
-console.log("Hello world!")
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var resultEl = document.getElementById('results');
-var lowercaseEl = document.getElementById('lowercase');
-var uppercaseEl = document.getElementById('uppercase');
-var numbersEl = document.getElementById('numbers');
-var symbolsEl = document.getElementById('symbols');
-var generateEl = document.getElementById('generate');
-var lengthEl = document.getElementById('length');
+var greeting = alert("Hello and welcome to creating your secured password");
 
-// Write password to the #password input 
+var uppercaseEl = prompt("Would you like uppercase in your password?");
+    if (uppercaseEl=='yes'){
+        alert("Great I will add uppercase to your password");
+    }
+    if (uppercaseEl=='no'){
+        alert("I will not add uppercase to your password");
+    }
+    console.log(uppercaseEl.toString());  
+
+var lowercaseEl = prompt("Would you like lowercase in your password?");
+    if (lowercaseEl=='yes'){
+        alert("Great I will add lowercase to your password");
+    }
+    if (lowercaseEl=='no'){
+        alert("I will not add lowercase to your password");
+    }
+    console.log(lowercaseEl.toString());  
+
+var symbolsEl = prompt("Would you like symbols in your password?");
+    if (symbolsEl=='yes'){
+        alert("Great I will add symbols to your password");
+    }
+    if (symbolsEl=='no'){
+        alert("I will not add symbols to your password");
+    }
+    console.log(symbolsEl.toString());  
+
+var numbersEl = prompt("Would you like numbers in your password?");
+    if (numbersEl=='yes'){
+        alert("Great I will add numbers to your password");
+    }
+    if (numbersEl=='no'){
+        alert("I will not add numbers to your password");
+    }
+    console.log(numbersEl.toString());  
+
+var lengthEl = prompt("How long do you want your password from 8-128 characters?",0);
+    if (lengthEl.between > 8 && lengthEl < 128);
+    while (lengthEl.between > 128 && lengthEl < ~8)
+        
+var passwordLength = lengthEl;
+
+    console.log(lengthEl.toString());  
+
+// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -19,32 +55,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-var randomFunc = {
-    lower: getRandomLower
-    upper: getRandomUpper
-    number: getRandomNumber
-    symbol: getRandomSymbol
-
-}
-function myFunction() {
-    var text;
-    var favDrink = prompt("What's your favorite cocktail drink?", "Daiquiri");
-
-let lower = prompt ("Do you want lowercase on your password"):
-
-if (lower.toLowerCase() == "yes") {
-    alert("I will add lowercase")
-} 
-
-generateEl.addEventListener('click', () => {
-    var length = +lengthEl.value;
-    var hasLower = lowercaseEl. checked;
-    var hasLower = uppercaseEl. checked;
-    var hasLower = numbersEl. checked;
-    var hasLower = symbolsEl. checked;
-
-})
 
 function getRandomLower(){
     return String.fromCharCode(Math.floor(Math.random() *26) + 97);
@@ -62,8 +72,5 @@ function getRandomSymbol(){
     var symbols = '!#$%&()*+,-./:;<=>?@[\]^_`{|}~';
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
-
-// console.log(getRandomSymbol());
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
